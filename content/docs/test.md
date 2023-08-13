@@ -1,7 +1,7 @@
 ---
-title: "Test"
+title: "Test Page"
 date: 2023-08-11T00:05:00-04:00
-draft: true
+draft: false
 ---
 
 # test
