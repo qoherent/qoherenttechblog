@@ -2,3 +2,15 @@ baseURL: http://qoherent.net/
 languageCode: en-us
 title: Qoherent Technical Blog
 theme: PaperMod
+
+
+menu:
+  main:
+    - identifier: categories
+      name: Topics
+      url: /categories/
+      weight: 10
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 10
