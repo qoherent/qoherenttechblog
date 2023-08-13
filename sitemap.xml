@@ -2,9 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://qoherent.net/categories/</loc>
+    <loc>http://qoherent.net/blog/</loc>
+    <lastmod>2023-08-12T01:16:34-04:00</lastmod>
   </url><url>
     <loc>http://qoherent.net/</loc>
+    <lastmod>2023-08-12T01:16:34-04:00</lastmod>
+  </url><url>
+    <loc>http://qoherent.net/blog/secondpost/</loc>
+    <lastmod>2023-08-12T01:16:34-04:00</lastmod>
+  </url><url>
+    <loc>http://qoherent.net/blog/firstpost/</loc>
+    <lastmod>2023-08-11T01:02:10-04:00</lastmod>
+  </url><url>
+    <loc>http://qoherent.net/docs/</loc>
+    <lastmod>2023-08-11T00:05:00-04:00</lastmod>
+  </url><url>
+    <loc>http://qoherent.net/docs/test/</loc>
+    <lastmod>2023-08-11T00:05:00-04:00</lastmod>
+  </url><url>
+    <loc>http://qoherent.net/categories/</loc>
   </url><url>
     <loc>http://qoherent.net/tags/</loc>
   </url>
