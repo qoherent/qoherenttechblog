@@ -4,6 +4,12 @@ title: Qoherent Technical Blog
 theme: PaperMod
 
 
+params:
+
+  ShowBreadCrumbs: true
+  ShowReadingTime: true
+
+
 menu:
   main:
     - identifier: categories
