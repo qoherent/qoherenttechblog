@@ -17,7 +17,7 @@ Pluto SDR doesnt automatically connect to ubuntu server as it is a USB device th
 
 To get it set up, first verify the pluto is connected via **lsusb**:
 
-```javascript
+```bash
 lsusb
 ```
 
@@ -25,7 +25,7 @@ lsusb
 
 With the pluto plugged in run:
 
-```javascript
+```bash
 ip link show
 ```
 
@@ -33,13 +33,13 @@ Take note of what is shown.
 
 Unplug the pluto then run it again. Note what is missing.
 
-```javascript
+```bash
 ip link show
 ```
 
 Plug it in again then run it one more time to see the new connection
 
-```javascript
+```bash
 ip link show
 ```
 
@@ -49,7 +49,7 @@ Note the name of the interface - in this case **enx00e022f21353**
 
 Manually set ifconfig for **enx00e022f21353**.
 
-```javascript
+```bash
 sudo ifconfig enx00e022f21353 192.168.3.2 netmask 255.255.255.0 up
 ```
 
@@ -59,7 +59,7 @@ Make special note to use the same IP subnet of your pluto (this one is set to th
 
 run ifconfig to see that the new interface exists.
 
-```javascript
+```bash
 ifconfig
 ```
 
@@ -67,7 +67,7 @@ ifconfig
 
 test with a ping
 
-```javascript
+```bash
 ping 192.168.3.1
 ```
 
@@ -81,13 +81,13 @@ if it returns a result, you are good to go!
 NOTE, this method will NOT persist across reboots. To do that, do the following method:
 
 
-```javascript
+```bash
 sudo nano /etc/netplan/02-usb-device.yaml
 ```
 add these contents:
  
 
-```javascript
+```bash
 network:
   version: 2
   renderer: networkd
@@ -99,11 +99,11 @@ network:
 
  
 
-```javascript
+```bash
 sudo netplan apply
 ```
 
-```javascript
+```bash
 ping 192.168.3.1
 ```
 
