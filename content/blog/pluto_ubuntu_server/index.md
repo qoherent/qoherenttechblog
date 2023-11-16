@@ -10,7 +10,6 @@ tags: ['pluto','sdr','ubuntu']
 categories: ['how-to']
 ---
 
-# Setting up PlutoSDR on ubuntu Server
 
 Pluto SDR doesnt automatically connect to ubuntu server as it is a USB device that emulates an ethernet conenction, and ubuntu server does not let USB devices install themselves automatically.
 
@@ -22,7 +21,7 @@ To get it set up, first verify the pluto is connected via **lsusb**:
 lsusb
 ```
 
- ![](img/11_23_pluto_ubuntu_0.png)
+ ![](images/11_23_pluto_ubuntu_0.png)
 
 With the pluto plugged in run:
 
@@ -46,7 +45,7 @@ ip link show
 
 Note the name of the interface - in this case **enx00e022f21353**
 
-  ![](img/11_23_pluto_ubuntu_1.png)
+  ![](images/11_23_pluto_ubuntu_1.png)
 
 Manually set ifconfig for **enx00e022f21353**.
 
@@ -64,7 +63,7 @@ run ifconfig to see that the new interface exists.
 ifconfig
 ```
 
- ![](img/11_23_pluto_ubuntu_2.png)
+ ![](images/11_23_pluto_ubuntu_2.png)
 
 test with a ping
 
@@ -76,7 +75,7 @@ if it returns a result, you are good to go!
 
  
 
- ![](img/11_23_pluto_ubuntu_3.png)
+ ![](images/11_23_pluto_ubuntu_3.png)
 
  
 NOTE, this method will NOT persist across reboots. To do that, do the following method:

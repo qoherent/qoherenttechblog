@@ -13,11 +13,11 @@
       <pubDate>Sat, 12 Aug 2023 01:16:34 -0400</pubDate>
       
       <guid>http://qoherent.net/blog/pluto_ubuntu_server/</guid>
-      <description>Setting up PlutoSDR on ubuntu Server Pluto SDR doesnt automatically connect to ubuntu server as it is a USB device that emulates an ethernet conenction, and ubuntu server does not let USB devices install themselves automatically.
+      <description>Pluto SDR doesnt automatically connect to ubuntu server as it is a USB device that emulates an ethernet conenction, and ubuntu server does not let USB devices install themselves automatically.
 To get it set up, first verify the pluto is connected via lsusb:
 lsusb With the pluto plugged in run:
 ip link show Take note of what is shown.
-Unplug the pluto then run it again.</description>
+Unplug the pluto then run it again. Note what is missing.</description>
     </item>
     
   </channel>
