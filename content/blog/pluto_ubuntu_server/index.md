@@ -1,6 +1,6 @@
 ---
 title: "Getting an Analog Devices ADALM-PLUTO working on ubuntu server."
-date: 2023-16-12T01:16:34-04:00
+date: 2023-11-16T01:16:34-04:00
 draft: false
 cover:
     # image img/example.jpg

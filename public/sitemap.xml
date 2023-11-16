@@ -3,10 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://qoherent.net/blog/</loc>
-    <lastmod>2023-08-12T01:16:34-04:00</lastmod>
+    <lastmod>2023-11-16T01:16:34-04:00</lastmod>
   </url><url>
     <loc>http://qoherent.net/categories/</loc>
-    <lastmod>2023-08-12T01:16:34-04:00</lastmod>
+    <lastmod>2023-11-16T01:16:34-04:00</lastmod>
+  </url><url>
+    <loc>http://qoherent.net/blog/pluto_ubuntu_server/</loc>
+    <lastmod>2023-11-16T01:16:34-04:00</lastmod>
+  </url><url>
+    <loc>http://qoherent.net/categories/how-to/</loc>
+    <lastmod>2023-11-16T01:16:34-04:00</lastmod>
+  </url><url>
+    <loc>http://qoherent.net/tags/pluto/</loc>
+    <lastmod>2023-11-16T01:16:34-04:00</lastmod>
+  </url><url>
+    <loc>http://qoherent.net/</loc>
+    <lastmod>2023-11-16T01:16:34-04:00</lastmod>
+  </url><url>
+    <loc>http://qoherent.net/tags/sdr/</loc>
+    <lastmod>2023-11-16T01:16:34-04:00</lastmod>
+  </url><url>
+    <loc>http://qoherent.net/tags/</loc>
+    <lastmod>2023-11-16T01:16:34-04:00</lastmod>
+  </url><url>
+    <loc>http://qoherent.net/tags/ubuntu/</loc>
+    <lastmod>2023-11-16T01:16:34-04:00</lastmod>
   </url><url>
     <loc>http://qoherent.net/tags/hello/</loc>
     <lastmod>2023-08-12T01:16:34-04:00</lastmod>
@@ -14,13 +35,7 @@
     <loc>http://qoherent.net/categories/meta/</loc>
     <lastmod>2023-08-12T01:16:34-04:00</lastmod>
   </url><url>
-    <loc>http://qoherent.net/</loc>
-    <lastmod>2023-08-12T01:16:34-04:00</lastmod>
-  </url><url>
     <loc>http://qoherent.net/blog/secondpost/</loc>
-    <lastmod>2023-08-12T01:16:34-04:00</lastmod>
-  </url><url>
-    <loc>http://qoherent.net/tags/</loc>
     <lastmod>2023-08-12T01:16:34-04:00</lastmod>
   </url><url>
     <loc>http://qoherent.net/blog/firstpost/</loc>
@@ -31,15 +46,5 @@
   </url><url>
     <loc>http://qoherent.net/docs/test/</loc>
     <lastmod>2023-08-11T00:05:00-04:00</lastmod>
-  </url><url>
-    <loc>http://qoherent.net/blog/pluto_ubuntu_server/</loc>
-  </url><url>
-    <loc>http://qoherent.net/categories/how-to/</loc>
-  </url><url>
-    <loc>http://qoherent.net/tags/pluto/</loc>
-  </url><url>
-    <loc>http://qoherent.net/tags/sdr/</loc>
-  </url><url>
-    <loc>http://qoherent.net/tags/ubuntu/</loc>
   </url>
 </urlset>

@@ -62,8 +62,8 @@ At Qoherent, we use it for all sorts of applications with all kinds of workstati
 At Qoherent, we use it for all sorts of applications with all kinds of workstations. One common use case is with our portable ubuntu server systems." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://qoherent.net/blog/pluto_ubuntu_server/" /><meta property="article:section" content="blog" />
-
-
+<meta property="article:published_time" content="2023-11-16T01:16:34-04:00" />
+<meta property="article:modified_time" content="2023-11-16T01:16:34-04:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Getting an Analog Devices ADALM-PLUTO working on ubuntu server."/>
@@ -104,8 +104,8 @@ At Qoherent, we use it for all sorts of applications with all kinds of workstati
   "articleBody": "The ADI ADALM Pluto is a great device for prototyping SDR solutions. It is compatible with [GNU Radio(https://wiki.gnuradio.org/index.php/PlutoSDR_Source)], has a python API, and is a great utility that is readily commercially available. It is even the subject of a widely availible course on DSP, pySDR.\nAt Qoherent, we use it for all sorts of applications with all kinds of workstations. One common use case is with our portable ubuntu server systems.\nUnfortunately, the Pluto SDR doesnt automatically connect to ubuntu server. The Pluto SDR it is a USB device that emulates an ethernet conenction, and ubuntu server does not let USB devices install themselves automatically.\nTo overcome this, we have put together the following guide.\nFinding the pluto To get it set up, first verify the pluto is connected via lsusb:\nlsusb With the pluto plugged in run ip link show:\nip link show Take note of what is shown. Unplug the pluto then run it again. Note the parameters that are missing. Run ip lonk show again.\nip link show Plug it in again then run ip link show it one more time to see the new connection.\nNote the name of the interface - in this case enx00e022f21353\nSetting up the new connection. Manually set ifconfig for enx00e022f21353.\nsudo ifconfig enx00e022f21353 192.168.3.2 netmask 255.255.255.0 up Make special note to use the same IP subnet of your pluto (this one is set to the default of 192.168.3.1, so any IP on 192.168.3.x will do).\nrun ifconfig again to see that the new interface exists.\nifconfig test with a ping\nping 192.168.3.1 if it returns a result, you are good to go!\nNOTE, this method will NOT persist across reboots. To do that, do the following method:\nsudo nano /etc/netplan/02-usb-device.yaml add these contents: network: version: 2 renderer: networkd ethernets: enx00e022f21353: # use your correct interface name here dhcp4: no addresses: [192.168.3.2/24] sudo netplan apply ping 192.168.3.1 ",
   "wordCount" : "316",
   "inLanguage": "en",
-  "datePublished": "0001-01-01T00:00:00Z",
-  "dateModified": "0001-01-01T00:00:00Z",
+  "datePublished": "2023-11-16T01:16:34-04:00",
+  "dateModified": "2023-11-16T01:16:34-04:00",
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "http://qoherent.net/blog/pluto_ubuntu_server/"
@@ -183,7 +183,7 @@ At Qoherent, we use it for all sorts of applications with all kinds of workstati
     <h1 class="post-title">
       Getting an Analog Devices ADALM-PLUTO working on ubuntu server.
     </h1>
-    <div class="post-meta">2 min
+    <div class="post-meta"><span title='2023-11-16 01:16:34 -0400 -0400'>November 16, 2023</span>&nbsp;·&nbsp;2 min
 
 </div>
   </header> 
