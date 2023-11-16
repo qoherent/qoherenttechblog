@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Qoherent Technical Blog</title>
-    <link>http://qoherent.net/</link>
-    <description>Recent content on Qoherent Technical Blog</description>
+    <title>Blogs on Qoherent Technical Blog</title>
+    <link>http://qoherent.net/blog/</link>
+    <description>Recent content in Blogs on Qoherent Technical Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 12 Aug 2023 01:16:34 -0400</lastBuildDate><atom:link href="http://qoherent.net/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Aug 2023 01:16:34 -0400</lastBuildDate><atom:link href="http://qoherent.net/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Getting a pluto working on ubuntu server.</title>
       <link>http://qoherent.net/blog/pluto_ubuntu_server/</link>
@@ -36,21 +36,6 @@ Unplug the pluto then run it again.</description>
       
       <guid>http://qoherent.net/blog/firstpost/</guid>
       <description>testing our first post hello world!</description>
-    </item>
-    
-    <item>
-      <title>Test Page</title>
-      <link>http://qoherent.net/docs/test/</link>
-      <pubDate>Fri, 11 Aug 2023 00:05:00 -0400</pubDate>
-      
-      <guid>http://qoherent.net/docs/test/</guid>
-      <description>test text
-test two tesxt
-code block ~3dfsdfsd~
-3432434
-test three dsfsdfs
-sdsdsd
-sdsd</description>
     </item>
     
   </channel>

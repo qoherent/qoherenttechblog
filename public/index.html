@@ -70,7 +70,7 @@
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Qoherent Technical Blog",
-  "url": "http://qoherent.net",
+  "url": "http://qoherent.net/",
   "description": "",
   "thumbnailUrl": "http://qoherent.net/favicon.ico",
   "sameAs": [
@@ -95,7 +95,7 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://qoherent.net" accesskey="h" title="Qoherent Technical Blog (Alt + H)">Qoherent Technical Blog</a>
+            <a href="http://qoherent.net/" accesskey="h" title="Qoherent Technical Blog (Alt + H)">Qoherent Technical Blog</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -120,14 +120,64 @@
             </div>
         </div>
         <ul id="menu">
+            <li>
+                <a href="http://qoherent.net/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://qoherent.net/categories/" title="Topics">
+                    <span>Topics</span>
+                </a>
+            </li>
         </ul>
     </nav>
 </header>
 <main class="main"> 
+
+<article class="first-entry"> 
+  <header class="entry-header">
+    <h2>Getting a pluto working on ubuntu server.
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Setting up PlutoSDR on ubuntu Server Pluto SDR doesnt automatically connect to ubuntu server as it is a USB device that emulates an ethernet conenction, and ubuntu server does not let USB devices install themselves automatically.
+To get it set up, first verify the pluto is connected via lsusb:
+lsusb With the pluto plugged in run:
+ip link show Take note of what is shown.
+Unplug the pluto then run it again....</p>
+  </div>
+  <footer class="entry-footer"><span title='2023-08-12 01:16:34 -0400 EDT'>August 12, 2023</span>&nbsp;·&nbsp;2 min</footer>
+  <a class="entry-link" aria-label="post link to Getting a pluto working on ubuntu server." href="http://qoherent.net/blog/pluto_ubuntu_server/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>Secondpost
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>All your base are belong to us.</p>
+  </div>
+  <footer class="entry-footer"><span title='2023-08-12 01:16:34 -0400 EDT'>August 12, 2023</span>&nbsp;·&nbsp;1 min</footer>
+  <a class="entry-link" aria-label="post link to Secondpost" href="http://qoherent.net/blog/secondpost/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>Firstpost
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>testing our first post hello world!</p>
+  </div>
+  <footer class="entry-footer"><span title='2023-08-11 01:02:10 -0400 EDT'>August 11, 2023</span>&nbsp;·&nbsp;1 min</footer>
+  <a class="entry-link" aria-label="post link to Firstpost" href="http://qoherent.net/blog/firstpost/"></a>
+</article>
     </main>
     
 <footer class="footer">
-    <span>&copy; 2023 <a href="http://qoherent.net">Qoherent Technical Blog</a></span>
+    <span>&copy; 2023 <a href="http://qoherent.net/">Qoherent Technical Blog</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &

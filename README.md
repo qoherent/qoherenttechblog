@@ -6,4 +6,7 @@ Produced based on instructions [here](https://theplaybook.dev/docs/deploy-hugo-t
 
 Papermod instructions [here](https://www.youtube.com/watch?v=hjD9jTi_DQ4&list=PLeiDFxcsdhUrzkK5Jg9IZyiTsIMvXxKZP)
 
+https://github.com/adityatelange/hugo-PaperMod/wiki/Features
+
+
 Visible from Qoherent.net

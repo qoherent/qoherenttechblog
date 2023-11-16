@@ -1,25 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Qoherent Technical Blog</title>
-    <link>http://qoherent.net/</link>
-    <description>Recent content on Qoherent Technical Blog</description>
+    <title>meta on Qoherent Technical Blog</title>
+    <link>http://qoherent.net/categories/meta/</link>
+    <description>Recent content in meta on Qoherent Technical Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 12 Aug 2023 01:16:34 -0400</lastBuildDate><atom:link href="http://qoherent.net/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Getting a pluto working on ubuntu server.</title>
-      <link>http://qoherent.net/blog/pluto_ubuntu_server/</link>
-      <pubDate>Sat, 12 Aug 2023 01:16:34 -0400</pubDate>
-      
-      <guid>http://qoherent.net/blog/pluto_ubuntu_server/</guid>
-      <description>Setting up PlutoSDR on ubuntu Server Pluto SDR doesnt automatically connect to ubuntu server as it is a USB device that emulates an ethernet conenction, and ubuntu server does not let USB devices install themselves automatically.
-To get it set up, first verify the pluto is connected via lsusb:
-lsusb With the pluto plugged in run:
-ip link show Take note of what is shown.
-Unplug the pluto then run it again.</description>
-    </item>
-    
+    <lastBuildDate>Sat, 12 Aug 2023 01:16:34 -0400</lastBuildDate><atom:link href="http://qoherent.net/categories/meta/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Secondpost</title>
       <link>http://qoherent.net/blog/secondpost/</link>
