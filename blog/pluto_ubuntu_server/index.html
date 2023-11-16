@@ -199,48 +199,48 @@ Unplug the pluto then run it again. Note what is missing."/>
   <div class="post-content"><p>Pluto SDR doesnt automatically connect to ubuntu server as it is a USB device that emulates an ethernet conenction, and ubuntu server does not let USB devices install themselves automatically.</p>
 <p> </p>
 <p>To get it set up, first verify the pluto is connected via <strong>lsusb</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">lsusb</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>lsusb
 </span></span></code></pre></div><p><img loading="lazy" src="images/11_23_pluto_ubuntu_0.png" alt=""  />
 </p>
 <p>With the pluto plugged in run:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">ip</span> <span style="color:#a6e22e">link</span> <span style="color:#a6e22e">show</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ip link show
 </span></span></code></pre></div><p>Take note of what is shown.</p>
 <p>Unplug the pluto then run it again. Note what is missing.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">ip</span> <span style="color:#a6e22e">link</span> <span style="color:#a6e22e">show</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ip link show
 </span></span></code></pre></div><p>Plug it in again then run it one more time to see the new connection</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">ip</span> <span style="color:#a6e22e">link</span> <span style="color:#a6e22e">show</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ip link show
 </span></span></code></pre></div><p>Note the name of the interface - in this case <strong>enx00e022f21353</strong></p>
 <p>  <img loading="lazy" src="images/11_23_pluto_ubuntu_1.png" alt=""  />
 </p>
 <p>Manually set ifconfig for <strong>enx00e022f21353</strong>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">sudo</span> <span style="color:#a6e22e">ifconfig</span> <span style="color:#a6e22e">enx00e022f21353</span> <span style="color:#ae81ff">192.168</span>.<span style="color:#ae81ff">3.2</span> <span style="color:#a6e22e">netmask</span> <span style="color:#ae81ff">255.255</span>.<span style="color:#ae81ff">255.0</span> <span style="color:#a6e22e">up</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo ifconfig enx00e022f21353 192.168.3.2 netmask 255.255.255.0 up
 </span></span></code></pre></div><p>Make special note to use the same IP subnet of your pluto (this one is set to the default of 192.168.3.1, so any IP on 192.168.3.x will do).</p>
 <p> </p>
 <p>run ifconfig to see that the new interface exists.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">ifconfig</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ifconfig
 </span></span></code></pre></div><p><img loading="lazy" src="images/11_23_pluto_ubuntu_2.png" alt=""  />
 </p>
 <p>test with a ping</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">ping</span> <span style="color:#ae81ff">192.168</span>.<span style="color:#ae81ff">3.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ping 192.168.3.1
 </span></span></code></pre></div><p>if it returns a result, you are good to go!</p>
 <p> </p>
 <p><img loading="lazy" src="images/11_23_pluto_ubuntu_3.png" alt=""  />
 </p>
 <p> 
 NOTE, this method will NOT persist across reboots. To do that, do the following method:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">sudo</span> <span style="color:#a6e22e">nano</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">etc</span><span style="color:#f92672">/</span><span style="color:#a6e22e">netplan</span><span style="color:#f92672">/</span><span style="color:#ae81ff">02</span><span style="color:#f92672">-</span><span style="color:#a6e22e">usb</span><span style="color:#f92672">-</span><span style="color:#a6e22e">device</span>.<span style="color:#a6e22e">yaml</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo nano /etc/netplan/02-usb-device.yaml
 </span></span></code></pre></div><p>add these contents:
  </p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">network</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">version</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">renderer</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">networkd</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ethernets</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">enx00e022f21353</span><span style="color:#f92672">:</span>  <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">use</span> <span style="color:#a6e22e">your</span> <span style="color:#a6e22e">correct</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">name</span> <span style="color:#a6e22e">here</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">dhcp4</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">no</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">addresses</span><span style="color:#f92672">:</span> [<span style="color:#ae81ff">192.168</span>.<span style="color:#ae81ff">3.2</span><span style="color:#f92672">/</span><span style="color:#ae81ff">24</span>]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>network:
+</span></span><span style="display:flex;"><span>  version: <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>  renderer: networkd
+</span></span><span style="display:flex;"><span>  ethernets:
+</span></span><span style="display:flex;"><span>    enx00e022f21353:  <span style="color:#75715e"># use your correct interface name here</span>
+</span></span><span style="display:flex;"><span>      dhcp4: no
+</span></span><span style="display:flex;"><span>      addresses: <span style="color:#f92672">[</span>192.168.3.2/24<span style="color:#f92672">]</span>
 </span></span></code></pre></div><p> </p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">sudo</span> <span style="color:#a6e22e">netplan</span> <span style="color:#a6e22e">apply</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">ping</span> <span style="color:#ae81ff">192.168</span>.<span style="color:#ae81ff">3.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo netplan apply
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ping 192.168.3.1
 </span></span></code></pre></div><p> </p>
 
 
