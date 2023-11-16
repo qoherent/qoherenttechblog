@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Getting a pluto working on ubuntu server. | Qoherent Technical Blog</title>
+<meta name="keywords" content="pluto, sdr, ubuntu">
+<meta name="description" content="Setting up PlutoSDR on ubuntu Server Pluto SDR doesnt automatically connect to ubuntu server as it is a USB device that emulates an ethernet conenction, and ubuntu server does not let USB devices install themselves automatically.
+To get it set up, first verify the pluto is connected via lsusb:
+lsusb With the pluto plugged in run:
+ip link show Take note of what is shown.
+Unplug the pluto then run it again.">
+<meta name="author" content="">
+<link rel="canonical" href="http://qoherent.net/blog/pluto_ubuntu_server/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css" integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe&#43;FVUFzPh7U=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="http://qoherent.net/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://qoherent.net/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://qoherent.net/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://qoherent.net/apple-touch-icon.png">
+<link rel="mask-icon" href="http://qoherent.net/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Getting a pluto working on ubuntu server." />
+<meta property="og:description" content="Setting up PlutoSDR on ubuntu Server Pluto SDR doesnt automatically connect to ubuntu server as it is a USB device that emulates an ethernet conenction, and ubuntu server does not let USB devices install themselves automatically.
+To get it set up, first verify the pluto is connected via lsusb:
+lsusb With the pluto plugged in run:
+ip link show Take note of what is shown.
+Unplug the pluto then run it again." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://qoherent.net/blog/pluto_ubuntu_server/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2023-08-12T01:16:34-04:00" />
+<meta property="article:modified_time" content="2023-08-12T01:16:34-04:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Getting a pluto working on ubuntu server."/>
+<meta name="twitter:description" content="Setting up PlutoSDR on ubuntu Server Pluto SDR doesnt automatically connect to ubuntu server as it is a USB device that emulates an ethernet conenction, and ubuntu server does not let USB devices install themselves automatically.
+To get it set up, first verify the pluto is connected via lsusb:
+lsusb With the pluto plugged in run:
+ip link show Take note of what is shown.
+Unplug the pluto then run it again."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Blogs",
+      "item": "http://qoherent.net/blog/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Getting a pluto working on ubuntu server.",
+      "item": "http://qoherent.net/blog/pluto_ubuntu_server/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Getting a pluto working on ubuntu server.",
+  "name": "Getting a pluto working on ubuntu server.",
+  "description": "Setting up PlutoSDR on ubuntu Server Pluto SDR doesnt automatically connect to ubuntu server as it is a USB device that emulates an ethernet conenction, and ubuntu server does not let USB devices install themselves automatically.\nTo get it set up, first verify the pluto is connected via lsusb:\nlsusb With the pluto plugged in run:\nip link show Take note of what is shown.\nUnplug the pluto then run it again.",
+  "keywords": [
+    "pluto", "sdr", "ubuntu"
+  ],
+  "articleBody": "Setting up PlutoSDR on ubuntu Server Pluto SDR doesnt automatically connect to ubuntu server as it is a USB device that emulates an ethernet conenction, and ubuntu server does not let USB devices install themselves automatically.\nTo get it set up, first verify the pluto is connected via lsusb:\nlsusb With the pluto plugged in run:\nip link show Take note of what is shown.\nUnplug the pluto then run it again. Note what is missing.\nip link show Plug it in again then run it one more time to see the new connection\nip link show Note the name of the interface - in this case enx00e022f21353\nManually set ifconfig for enx00e022f21353.\nsudo ifconfig enx00e022f21353 192.168.3.2 netmask 255.255.255.0 up Make special note to use the same IP subnet of your pluto (this one is set to the default of 192.168.3.1, so any IP on 192.168.3.x will do).\nrun ifconfig to see that the new interface exists.\nifconfig test with a ping\nping 192.168.3.1 if it returns a result, you are good to go!\nNOTE, this method will NOT persist across reboots. To do that, do the following method:\nsudo nano /etc/netplan/02-usb-device.yaml add these contents: network: version: 2 renderer: networkd ethernets: enx00e022f21353: # use your correct interface name here dhcp4: no addresses: [192.168.3.2/24] sudo netplan apply ping 192.168.3.1 ",
+  "wordCount" : "218",
+  "inLanguage": "en",
+  "datePublished": "2023-08-12T01:16:34-04:00",
+  "dateModified": "2023-08-12T01:16:34-04:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://qoherent.net/blog/pluto_ubuntu_server/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Qoherent Technical Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://qoherent.net/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://qoherent.net/" accesskey="h" title="Qoherent Technical Blog (Alt + H)">Qoherent Technical Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://qoherent.net/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://qoherent.net/categories/" title="Topics">
+                    <span>Topics</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://qoherent.net/">Home</a>&nbsp;»&nbsp;<a href="http://qoherent.net/blog/">Blogs</a></div>
+    <h1 class="post-title">
+      Getting a pluto working on ubuntu server.
+    </h1>
+    <div class="post-meta"><span title='2023-08-12 01:16:34 -0400 -0400'>August 12, 2023</span>&nbsp;·&nbsp;2 min
+
+</div>
+  </header> 
+  <div class="post-content"><h1 id="setting-up-plutosdr-on-ubuntu-server">Setting up PlutoSDR on ubuntu Server<a hidden class="anchor" aria-hidden="true" href="#setting-up-plutosdr-on-ubuntu-server">#</a></h1>
+<p>Pluto SDR doesnt automatically connect to ubuntu server as it is a USB device that emulates an ethernet conenction, and ubuntu server does not let USB devices install themselves automatically.</p>
+<p> </p>
+<p>To get it set up, first verify the pluto is connected via <strong>lsusb</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">lsusb</span>
+</span></span></code></pre></div><p><img loading="lazy" src="img/11_23_pluto_ubuntu_0.png" alt=""  />
+</p>
+<p>With the pluto plugged in run:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">ip</span> <span style="color:#a6e22e">link</span> <span style="color:#a6e22e">show</span>
+</span></span></code></pre></div><p>Take note of what is shown.</p>
+<p>Unplug the pluto then run it again. Note what is missing.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">ip</span> <span style="color:#a6e22e">link</span> <span style="color:#a6e22e">show</span>
+</span></span></code></pre></div><p>Plug it in again then run it one more time to see the new connection</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">ip</span> <span style="color:#a6e22e">link</span> <span style="color:#a6e22e">show</span>
+</span></span></code></pre></div><p>Note the name of the interface - in this case <strong>enx00e022f21353</strong></p>
+<p>  <img loading="lazy" src="img/11_23_pluto_ubuntu_1.png" alt=""  />
+</p>
+<p>Manually set ifconfig for <strong>enx00e022f21353</strong>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">sudo</span> <span style="color:#a6e22e">ifconfig</span> <span style="color:#a6e22e">enx00e022f21353</span> <span style="color:#ae81ff">192.168</span>.<span style="color:#ae81ff">3.2</span> <span style="color:#a6e22e">netmask</span> <span style="color:#ae81ff">255.255</span>.<span style="color:#ae81ff">255.0</span> <span style="color:#a6e22e">up</span>
+</span></span></code></pre></div><p>Make special note to use the same IP subnet of your pluto (this one is set to the default of 192.168.3.1, so any IP on 192.168.3.x will do).</p>
+<p> </p>
+<p>run ifconfig to see that the new interface exists.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">ifconfig</span>
+</span></span></code></pre></div><p><img loading="lazy" src="img/11_23_pluto_ubuntu_2.png" alt=""  />
+</p>
+<p>test with a ping</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">ping</span> <span style="color:#ae81ff">192.168</span>.<span style="color:#ae81ff">3.1</span>
+</span></span></code></pre></div><p>if it returns a result, you are good to go!</p>
+<p> </p>
+<p><img loading="lazy" src="img/11_23_pluto_ubuntu_3.png" alt=""  />
+</p>
+<p> 
+NOTE, this method will NOT persist across reboots. To do that, do the following method:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">sudo</span> <span style="color:#a6e22e">nano</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">etc</span><span style="color:#f92672">/</span><span style="color:#a6e22e">netplan</span><span style="color:#f92672">/</span><span style="color:#ae81ff">02</span><span style="color:#f92672">-</span><span style="color:#a6e22e">usb</span><span style="color:#f92672">-</span><span style="color:#a6e22e">device</span>.<span style="color:#a6e22e">yaml</span>
+</span></span></code></pre></div><p>add these contents:
+ </p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">network</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">version</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">renderer</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">networkd</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ethernets</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">enx00e022f21353</span><span style="color:#f92672">:</span>  <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">use</span> <span style="color:#a6e22e">your</span> <span style="color:#a6e22e">correct</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">name</span> <span style="color:#a6e22e">here</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">dhcp4</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">no</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">addresses</span><span style="color:#f92672">:</span> [<span style="color:#ae81ff">192.168</span>.<span style="color:#ae81ff">3.2</span><span style="color:#f92672">/</span><span style="color:#ae81ff">24</span>]
+</span></span></code></pre></div><p> </p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">sudo</span> <span style="color:#a6e22e">netplan</span> <span style="color:#a6e22e">apply</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">ping</span> <span style="color:#ae81ff">192.168</span>.<span style="color:#ae81ff">3.1</span>
+</span></span></code></pre></div><p> </p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://qoherent.net/tags/pluto/">pluto</a></li>
+      <li><a href="http://qoherent.net/tags/sdr/">sdr</a></li>
+      <li><a href="http://qoherent.net/tags/ubuntu/">ubuntu</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="http://qoherent.net/">Qoherent Technical Blog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

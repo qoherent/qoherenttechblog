@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Blogs on Qoherent Technical Blog</title>
-    <link>http://qoherent.net/blog/</link>
-    <description>Recent content in Blogs on Qoherent Technical Blog</description>
+    <title>sdr on Qoherent Technical Blog</title>
+    <link>http://qoherent.net/tags/sdr/</link>
+    <description>Recent content in sdr on Qoherent Technical Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 12 Aug 2023 01:16:34 -0400</lastBuildDate><atom:link href="http://qoherent.net/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Aug 2023 01:16:34 -0400</lastBuildDate><atom:link href="http://qoherent.net/tags/sdr/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Getting a pluto working on ubuntu server.</title>
       <link>http://qoherent.net/blog/pluto_ubuntu_server/</link>
@@ -18,24 +18,6 @@ To get it set up, first verify the pluto is connected via lsusb:
 lsusb With the pluto plugged in run:
 ip link show Take note of what is shown.
 Unplug the pluto then run it again.</description>
-    </item>
-    
-    <item>
-      <title>Secondpost</title>
-      <link>http://qoherent.net/blog/secondpost/</link>
-      <pubDate>Sat, 12 Aug 2023 01:16:34 -0400</pubDate>
-      
-      <guid>http://qoherent.net/blog/secondpost/</guid>
-      <description>All your base are belong to us.</description>
-    </item>
-    
-    <item>
-      <title>Firstpost</title>
-      <link>http://qoherent.net/blog/firstpost/</link>
-      <pubDate>Fri, 11 Aug 2023 01:02:10 -0400</pubDate>
-      
-      <guid>http://qoherent.net/blog/firstpost/</guid>
-      <description>testing our first post hello world!</description>
     </item>
     
   </channel>
