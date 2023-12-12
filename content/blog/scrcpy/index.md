@@ -10,7 +10,7 @@ tags: ['5G','SRS','ubuntu', 'OpenRAN']
 categories: ['how-to']
 ---
 
-# How to install Scrcpy to mirror Android phone
+## How to install Scrcpy to mirror Android phone
 
 **Scrcpy**, referred to as “**Screen Copy**” is an open-source software enabling a PC  to remote control an Android phone that is either connected through USB or through WIFI.
 
@@ -18,7 +18,7 @@ Scrcpy is a great way to remotely control an UE as part of a 5G or OpenRAN devel
 
 Scrcpy supports Linux, Windows, and MacOS. The following guide is for controlling the phone from a remote ubuntu-based system, with remote connection from a local Windows machine.
 
-## **Installation procedure (Ubuntu remote target)**
+### Installation procedure (Ubuntu remote target)
 
 SSH into your remote machine (or open a terminal) and install with the following commands:
 
@@ -35,7 +35,7 @@ cd scrcpy
 ```
 
 
-## **Set up USB Debugging to enable the remote machine to control the phone **
+### Set up USB Debugging to enable the remote machine to control the phone 
 
 Put the Android phone in developer mode and enable USB debugging:
 
@@ -44,42 +44,44 @@ Put the Android phone in developer mode and enable USB debugging:
 * Connect the phone to a USB port of the Linux PC where Scrcpy is installed. A popup appears on the phone screen, then, authorize the USB debugging connection to this PC.
 
 
-## Install an X-server
+### Install an X-server
 
 1) Install VcXsrv from <https://sourceforge.net/projects/vcxsrv/>
 
 2) Run VcXsrv with “multiple windows“ (first page) and “start no client“ (second page)
 
- ![](images/12_11_scrcpy_0.png)
+![](images/12_11_scrcpy_0.png)
 
 
- ![](images/12_11_scrcpy_1.png)
+![](images/12_11_scrcpy_1.png)
 
 Go with default settings for the remainder of the screens.
 
 
-## Enable X11 forwarding in a terminal session
+### Enable X11 forwarding in a terminal session
 
 The simplest method is to use PuTTY which enables all the right settings within the gui.
 
 
 In PuTTY set up the correct address / keys / ports
 
- ![](images/12_11_scrcpy_2.png)
+![](images/12_11_scrcpy_2.png)
 
 Then enable X11 forwarding on the SSH Pane and set **X display location** to `localhost:0.0`
 
- ![](images/12_11_scrcpy_3.png)Click “open“ then log in.
+![](images/12_11_scrcpy_3.png)
 
- ![](images/12_11_scrcpy_4.png)
+Click “open“ then log in.
 
-## Running scrcpy
+![](images/12_11_scrcpy_4.png)
+
+### Running scrcpy
 
 *  Start the application using the below command:
 
-  ```bash
-  scrcpy
-  ```
+```bash
+scrcpy
+```
 
 
 if there is an audio error, add the `--no-audio` flag
@@ -94,6 +96,4 @@ If the USB connection is enabled and the phone is detected,  a GUI interface mir
 
  ![](images/12_11_scrcpy_5.png)
 
-
-\
 
