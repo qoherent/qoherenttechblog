@@ -10,3 +10,13 @@ https://github.com/adityatelange/hugo-PaperMod/wiki/Features
 
 
 Visible from Qoherent.net
+
+
+# making a new page
+
+
+1) Copy a tempate in the blog folder or the docs folder.
+
+2) Copy in the markdown and the images into the folder.
+
+3) run `hugo`

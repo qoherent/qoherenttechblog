@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>SRS on Qoherent Technical Blog</title>
+    <link>http://qoherent.net/tags/srs/</link>
+    <description>Recent content in SRS on Qoherent Technical Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 11 Dec 2023 01:16:34 -0400</lastBuildDate><atom:link href="http://qoherent.net/tags/srs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to connect to the screen of an android phone remotely with SCRCPY and SSH.</title>
+      <link>http://qoherent.net/blog/scrcpy/</link>
+      <pubDate>Mon, 11 Dec 2023 01:16:34 -0400</pubDate>
+      
+      <guid>http://qoherent.net/blog/scrcpy/</guid>
+      <description>How to install Scrcpy to mirror Android phone Scrcpy, referred to as “Screen Copy” is an open-source software enabling a PC to remote control an Android phone that is either connected through USB or through WIFI.
+Scrcpy is a great way to remotely control an UE as part of a 5G or OpenRAN development activity. Qoherent uses Scrcpy to control our UE’s remotely, as part of collaborations with partner companies in other cities, and to enable our team to work remotely and independently.</description>
+    </item>
+    
+  </channel>
+</rss>

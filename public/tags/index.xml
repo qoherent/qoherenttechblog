@@ -6,7 +6,43 @@
     <description>Recent content in Tags on Qoherent Technical Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 16 Nov 2023 01:16:34 -0400</lastBuildDate><atom:link href="http://qoherent.net/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 11 Dec 2023 01:16:34 -0400</lastBuildDate><atom:link href="http://qoherent.net/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>5G</title>
+      <link>http://qoherent.net/tags/5g/</link>
+      <pubDate>Mon, 11 Dec 2023 01:16:34 -0400</pubDate>
+      
+      <guid>http://qoherent.net/tags/5g/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OpenRAN</title>
+      <link>http://qoherent.net/tags/openran/</link>
+      <pubDate>Mon, 11 Dec 2023 01:16:34 -0400</pubDate>
+      
+      <guid>http://qoherent.net/tags/openran/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SRS</title>
+      <link>http://qoherent.net/tags/srs/</link>
+      <pubDate>Mon, 11 Dec 2023 01:16:34 -0400</pubDate>
+      
+      <guid>http://qoherent.net/tags/srs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ubuntu</title>
+      <link>http://qoherent.net/tags/ubuntu/</link>
+      <pubDate>Mon, 11 Dec 2023 01:16:34 -0400</pubDate>
+      
+      <guid>http://qoherent.net/tags/ubuntu/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>pluto</title>
       <link>http://qoherent.net/tags/pluto/</link>
@@ -22,15 +58,6 @@
       <pubDate>Thu, 16 Nov 2023 01:16:34 -0400</pubDate>
       
       <guid>http://qoherent.net/tags/sdr/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ubuntu</title>
-      <link>http://qoherent.net/tags/ubuntu/</link>
-      <pubDate>Thu, 16 Nov 2023 01:16:34 -0400</pubDate>
-      
-      <guid>http://qoherent.net/tags/ubuntu/</guid>
       <description></description>
     </item>
     
