@@ -6,7 +6,43 @@
     <description>Recent content in Tags on Qoherent Technical Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 11 Dec 2023 01:16:34 -0400</lastBuildDate><atom:link href="http://qoherent.net/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 10 Feb 2024 01:16:34 -0400</lastBuildDate><atom:link href="http://qoherent.net/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GNU Radio</title>
+      <link>http://qoherent.net/tags/gnu-radio/</link>
+      <pubDate>Sat, 10 Feb 2024 01:16:34 -0400</pubDate>
+      
+      <guid>http://qoherent.net/tags/gnu-radio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>http://qoherent.net/tags/python/</link>
+      <pubDate>Sat, 10 Feb 2024 01:16:34 -0400</pubDate>
+      
+      <guid>http://qoherent.net/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ubuntu</title>
+      <link>http://qoherent.net/tags/ubuntu/</link>
+      <pubDate>Sat, 10 Feb 2024 01:16:34 -0400</pubDate>
+      
+      <guid>http://qoherent.net/tags/ubuntu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>venv</title>
+      <link>http://qoherent.net/tags/venv/</link>
+      <pubDate>Sat, 10 Feb 2024 01:16:34 -0400</pubDate>
+      
+      <guid>http://qoherent.net/tags/venv/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>5G</title>
       <link>http://qoherent.net/tags/5g/</link>
@@ -35,15 +71,6 @@
     </item>
     
     <item>
-      <title>ubuntu</title>
-      <link>http://qoherent.net/tags/ubuntu/</link>
-      <pubDate>Mon, 11 Dec 2023 01:16:34 -0400</pubDate>
-      
-      <guid>http://qoherent.net/tags/ubuntu/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>pluto</title>
       <link>http://qoherent.net/tags/pluto/</link>
       <pubDate>Thu, 16 Nov 2023 01:16:34 -0400</pubDate>
@@ -67,33 +94,6 @@
       <pubDate>Sat, 12 Aug 2023 01:16:34 -0400</pubDate>
       
       <guid>http://qoherent.net/tags/hello/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>GNU Radio</title>
-      <link>http://qoherent.net/tags/gnu-radio/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://qoherent.net/tags/gnu-radio/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>python</title>
-      <link>http://qoherent.net/tags/python/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://qoherent.net/tags/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>venv</title>
-      <link>http://qoherent.net/tags/venv/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://qoherent.net/tags/venv/</guid>
       <description></description>
     </item>
     

@@ -2,34 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://qoherent.net/tags/5g/</loc>
-    <lastmod>2023-12-11T01:16:34-04:00</lastmod>
-  </url><url>
     <loc>http://qoherent.net/blog/</loc>
-    <lastmod>2023-12-11T01:16:34-04:00</lastmod>
+    <lastmod>2024-02-10T01:16:34-04:00</lastmod>
   </url><url>
     <loc>http://qoherent.net/categories/</loc>
+    <lastmod>2024-02-10T01:16:34-04:00</lastmod>
+  </url><url>
+    <loc>http://qoherent.net/tags/gnu-radio/</loc>
+    <lastmod>2024-02-10T01:16:34-04:00</lastmod>
+  </url><url>
+    <loc>http://qoherent.net/blog/gnu_radio_python_virtual_environment_venv/</loc>
+    <lastmod>2024-02-10T01:16:34-04:00</lastmod>
+  </url><url>
+    <loc>http://qoherent.net/categories/how-to/</loc>
+    <lastmod>2024-02-10T01:16:34-04:00</lastmod>
+  </url><url>
+    <loc>http://qoherent.net/tags/python/</loc>
+    <lastmod>2024-02-10T01:16:34-04:00</lastmod>
+  </url><url>
+    <loc>http://qoherent.net/</loc>
+    <lastmod>2024-02-10T01:16:34-04:00</lastmod>
+  </url><url>
+    <loc>http://qoherent.net/tags/</loc>
+    <lastmod>2024-02-10T01:16:34-04:00</lastmod>
+  </url><url>
+    <loc>http://qoherent.net/tags/ubuntu/</loc>
+    <lastmod>2024-02-10T01:16:34-04:00</lastmod>
+  </url><url>
+    <loc>http://qoherent.net/tags/venv/</loc>
+    <lastmod>2024-02-10T01:16:34-04:00</lastmod>
+  </url><url>
+    <loc>http://qoherent.net/tags/5g/</loc>
     <lastmod>2023-12-11T01:16:34-04:00</lastmod>
   </url><url>
     <loc>http://qoherent.net/blog/scrcpy/</loc>
     <lastmod>2023-12-11T01:16:34-04:00</lastmod>
   </url><url>
-    <loc>http://qoherent.net/categories/how-to/</loc>
-    <lastmod>2023-12-11T01:16:34-04:00</lastmod>
-  </url><url>
     <loc>http://qoherent.net/tags/openran/</loc>
     <lastmod>2023-12-11T01:16:34-04:00</lastmod>
   </url><url>
-    <loc>http://qoherent.net/</loc>
-    <lastmod>2023-12-11T01:16:34-04:00</lastmod>
-  </url><url>
     <loc>http://qoherent.net/tags/srs/</loc>
-    <lastmod>2023-12-11T01:16:34-04:00</lastmod>
-  </url><url>
-    <loc>http://qoherent.net/tags/</loc>
-    <lastmod>2023-12-11T01:16:34-04:00</lastmod>
-  </url><url>
-    <loc>http://qoherent.net/tags/ubuntu/</loc>
     <lastmod>2023-12-11T01:16:34-04:00</lastmod>
   </url><url>
     <loc>http://qoherent.net/blog/pluto_ubuntu_server/</loc>
@@ -58,13 +70,5 @@
   </url><url>
     <loc>http://qoherent.net/docs/test/</loc>
     <lastmod>2023-08-11T00:05:00-04:00</lastmod>
-  </url><url>
-    <loc>http://qoherent.net/tags/gnu-radio/</loc>
-  </url><url>
-    <loc>http://qoherent.net/blog/gnu_radio_python_virtual_environment_venv/</loc>
-  </url><url>
-    <loc>http://qoherent.net/tags/python/</loc>
-  </url><url>
-    <loc>http://qoherent.net/tags/venv/</loc>
   </url>
 </urlset>

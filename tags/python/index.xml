@@ -5,11 +5,12 @@
     <link>http://qoherent.net/tags/python/</link>
     <description>Recent content in python on Qoherent Technical Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://qoherent.net/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Sat, 10 Feb 2024 01:16:34 -0400</lastBuildDate><atom:link href="http://qoherent.net/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to Run GNU Radio in a Python Virtual Environment.</title>
       <link>http://qoherent.net/blog/gnu_radio_python_virtual_environment_venv/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 10 Feb 2024 01:16:34 -0400</pubDate>
       
       <guid>http://qoherent.net/blog/gnu_radio_python_virtual_environment_venv/</guid>
       <description>Pull an External GNU Radio Installation into your Python Virtual Environment This article explains how to access your system-level GNU Radio installation from within a pre-existing Python virtual environment. After completing these steps, you&amp;rsquo;ll be able to import GNU Radio or any of its subpackages into your Python modules using simple import statements, such as: from gnuradio import gr.
