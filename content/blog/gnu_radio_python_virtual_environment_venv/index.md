@@ -1,6 +1,6 @@
 ---
 title: "How to Run GNU Radio in a Python Virtual Environment."
-date: 2024-2-10T01:16:34-04:00
+date: 2024-02-10T01:16:34-04:00
 draft: false
 cover:
     # image img/example.jpg
