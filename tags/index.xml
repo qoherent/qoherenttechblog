@@ -70,5 +70,32 @@
       <description></description>
     </item>
     
+    <item>
+      <title>GNU Radio</title>
+      <link>http://qoherent.net/tags/gnu-radio/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://qoherent.net/tags/gnu-radio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>http://qoherent.net/tags/python/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://qoherent.net/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>venv</title>
+      <link>http://qoherent.net/tags/venv/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://qoherent.net/tags/venv/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

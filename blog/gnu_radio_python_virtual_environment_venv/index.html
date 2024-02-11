@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>How to Run GNU Radio in a Python Virtual Environment. | Qoherent Technical Blog</title>
+<meta name="keywords" content="GNU Radio, python, ubuntu, venv">
+<meta name="description" content="Pull an External GNU Radio Installation into your Python Virtual Environment This article explains how to access your system-level GNU Radio installation from within a pre-existing Python virtual environment. After completing these steps, you&rsquo;ll be able to import GNU Radio or any of its subpackages into your Python modules using simple import statements, such as: from gnuradio import gr.
+We provide an explanation and a recommendation before the solution, but to jump straight to the solution, click here.">
+<meta name="author" content="">
+<link rel="canonical" href="http://qoherent.net/blog/gnu_radio_python_virtual_environment_venv/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css" integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe&#43;FVUFzPh7U=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="http://qoherent.net/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://qoherent.net/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://qoherent.net/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://qoherent.net/apple-touch-icon.png">
+<link rel="mask-icon" href="http://qoherent.net/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="How to Run GNU Radio in a Python Virtual Environment." />
+<meta property="og:description" content="Pull an External GNU Radio Installation into your Python Virtual Environment This article explains how to access your system-level GNU Radio installation from within a pre-existing Python virtual environment. After completing these steps, you&rsquo;ll be able to import GNU Radio or any of its subpackages into your Python modules using simple import statements, such as: from gnuradio import gr.
+We provide an explanation and a recommendation before the solution, but to jump straight to the solution, click here." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://qoherent.net/blog/gnu_radio_python_virtual_environment_venv/" /><meta property="article:section" content="blog" />
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="How to Run GNU Radio in a Python Virtual Environment."/>
+<meta name="twitter:description" content="Pull an External GNU Radio Installation into your Python Virtual Environment This article explains how to access your system-level GNU Radio installation from within a pre-existing Python virtual environment. After completing these steps, you&rsquo;ll be able to import GNU Radio or any of its subpackages into your Python modules using simple import statements, such as: from gnuradio import gr.
+We provide an explanation and a recommendation before the solution, but to jump straight to the solution, click here."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Blogs",
+      "item": "http://qoherent.net/blog/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "How to Run GNU Radio in a Python Virtual Environment.",
+      "item": "http://qoherent.net/blog/gnu_radio_python_virtual_environment_venv/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How to Run GNU Radio in a Python Virtual Environment.",
+  "name": "How to Run GNU Radio in a Python Virtual Environment.",
+  "description": "Pull an External GNU Radio Installation into your Python Virtual Environment This article explains how to access your system-level GNU Radio installation from within a pre-existing Python virtual environment. After completing these steps, you\u0026rsquo;ll be able to import GNU Radio or any of its subpackages into your Python modules using simple import statements, such as: from gnuradio import gr.\nWe provide an explanation and a recommendation before the solution, but to jump straight to the solution, click here.",
+  "keywords": [
+    "GNU Radio", "python", "ubuntu", "venv"
+  ],
+  "articleBody": "Pull an External GNU Radio Installation into your Python Virtual Environment This article explains how to access your system-level GNU Radio installation from within a pre-existing Python virtual environment. After completing these steps, you’ll be able to import GNU Radio or any of its subpackages into your Python modules using simple import statements, such as: from gnuradio import gr.\nWe provide an explanation and a recommendation before the solution, but to jump straight to the solution, click here.\nMotivation GNU Radio is a free and open-source software development toolkit for software-defined radios. The easiest way to get started with GNU Radio is thought the GNU Radio Companion graphical user interface. The GNU Radio Companion allows you to create and execute signal processing applications by simply dragging, dropping, and connecting together predefined radio blocks.\nOne of the key strengths of GNU Radio is its Python API, which allows users to control and interact with GNU Radio functions programmatically. Instead of designing signal processing flowgraphs graphically, you can use the power and flexibility of Python to manage GNU Radio flowgraphs. The benefits of using gnu radio in python are outlined in this presentation from GR Con 2023.\nFor more information on getting started with Python, please refer to W3Schools’ online Python Tutorial or Replit’s 100 days of python course.\nVirtual Environments Python dependencies are external libraries on which your project depends. There are typically many, each with their own respective dependencies. In Python, we use virtual environments to facilitate project-specific dependency management. Virtual environments helps us avoid inter-project dependency conflicts by providing isolated, sandboxed environments, each with their own, project-specific set of dependencies. This means we can use one version of a Python package for one project and a different version for another.\nHowever, for virtual environments to be effective, you need to be able to install all project dependencies into the project’s virtual environment. For this, we use Pip. Pip is the standard package manager for Python, and allows users to easily install libraries and utilities from the Python Package Index (PyPI) and other indexes. For instance, to install NumPy into our virtual environment, we would execute pip install numpy from the command line. Then, we would be able to import and use NumPy and its dependencies in our project.\nIn general, it’s advisable to conduct all Python development within isolated virtual environments.\nFor as accessible introduction to creating, using, and managing Python virtual environments, check out this Medium article by Jake Manger: Getting Started with Python Virtual Environments.\nThe Problem Because it has many non-Python dependencies, GNU Radio is not part of the Python ecosystem. This means GNU Radio is not listed on the PyPI, and is not installable with pip. This can make it challenging to install GNU Radio into an isolated environment. But it is a very common use case to want to run GNU Radio code within a larger python project. The deviation from conventional Python package installations poses a challenge for users accustomed to this approach.\nThe Recommended Solution For most use cases, the recommend solution is to install GNU Radio into a Conda environment. Conda is a system package manager specifically designed for installing complex software stacks, such as GNU Radio, into sandboxed Python environments, called Conda environment. Conda environments are very similar to traditional virtual environments, except Conda environments support both Python and non-Python packages, while virtual environments are specifically tailored for managing Python packages.\nConda-forge, a community effort to provide conda packages for a wide range of software, makes it easy to install GNU Radio, its dependencies, and out-of-tree modules in a self-contained environment. Please refer to CondaInstall for more information on installing GNU Radio with Conda.\nIf you’re new to Conda and Python package management, it is recommended to start with radioconda, a complete Conda distribution that comes pre-installed with GNU Radio.\nOur Workaround Should your use case require a virtual environment or you encounter difficulties with radioconda, we present a workaround to link an external GNU Radio installation into an already existing virtual environment.\nThis workaround, involving symbolic links, can be used to pull your system-level GNU Radio installation into a standard Python virtual environment.\nCaveat: This is not the recommended way to use GNU Radio. GNU Radio is built against a specific Python installation, and using it with a different Python installation—such as the one in your virtual environment—may result in unexpected behavior.\nIn a Python virtual environment, user-installed packages are typically installed in the site-packages directory within the module directory of the Python installation. For example, if I created a virtual environment for Python 3.10 using venv, user-installed packages would be installed to venv/lib/python3.10/site-packages.\nWhen you try to import a GNU Radio module, Python searches for it in all locations listed on PYTHONPATH, which includes the virtual environment’s site-packages directory. However, if GNU Radio is not installed within this environment, this will result in the following error: ModuleNotFoundError: No module named 'gnuradio'\nYou could update PYTHONPATH to include the directory where GNU Radio is installed, but this is not a good idea, as doing so may introduce dependencies that conflict with those already installed in your virtual environment.\nA better solution is to create a link in your project’s site-packages directory to the location where the gnuradio module is installed. Then, when Python searches for gnuradio in site-packages, it will find a link to a functional GNU Radio installation.\nSymbolic Links Symbolic links, also known as symlinks or soft links, are a type of file that serves as a reference to another file or directory in the file system. Symbolic links contain the path of the target file or directory, unlike hard links, which directly point to the index node of the target file or directory.\nThey are essentially shortcuts or pointers to other files or directories. They allow you to create a reference to a file or directory in a different location without duplicating the content.\nSymbolic links can enable the integration of GNU Radio’s functionality into Python virtual environments. By creating symbolic links, developers can interact with GNU Radio seamlessly within their Python projects.\nCreating a Symbolic Link On Debian based distributions such as Ubuntu, we can install a system-level GNU Radio installation with:\nsudo apt-get install gnuradio System level packages are installed in dist-packages, which we can verify with:\npython3 -c \"import gnuradio; print(gnuradio.__path__[0])\" This should return /usr/lib/python3/dist-packages/gnuradio, or similar.\nWe can create a link from our virtual environment’s site-package directory to the dist-packages directory where GNU Radio is installed using ln, the standard Unix command utility used to create links to existing files or directories.\nThe ln command can be used to create both hard links and symbolic links (symlinks). Here, we use the -s option to create symlinks, which point to the path of the target file or directory rather than its inode. You can think of symlinks as shortcuts.\nExample solution: Assuming GNU Radio is installed, here is the complete bash script we use to generate the symlinks, intended to be executed within the Python virtual environment:\n#!/bin/bash # Find the system-level GNU Radio installation GNURADIO_PATH=$(python3 -c \"import gnuradio; print(gnuradio.__path__[0])\") PMT_PATH=$(python3 -c \"import pmt; print(pmt.__path__[0])\") # Identify the Python version used within the virtual environment PYTHON_VERSION=$(python3 -c \"import sys; print('.'.join(map(str, sys.version_info[:2])))\") # Create a symbolic link to system-level GNU Radio installation ln -s $GNURADIO_PATH venv/lib/python${PYTHON_VERSION}/site-packages/ ln -s $PMT_PATH venv/lib/python${PYTHON_VERSION}/site-packages/ # Print a success message echo \"Successfully created symbolic link for gnuradio in venv.\" deactivate The specific process we use to deploy it (called gr_setup.sh below) from a project’s root folder to a new virtual environent includes:\nCreate the venv then run the bash script python3 -m venv venv ./gr_setup.sh Activate the virtual environment then test in the python console source venv/bin/activate python3 import gnuradio If there is no error, you are successful! Exit the python window.\nYou are now ready to install the rest of your dependencies to the virtual environment- e.g.:\npip install -r requirements.txt A Few Things to Note:\nThis does not only need to occur from the system-level, it can be used to link a conda-installed version of GNU Radio to a python virtual environment. Since we’re using symlinks, if the system-level GNU Radio installation is moved or removed, these links will break, resulting in a ModuleNotFoundError. If we were to modify or recreate this link, we would need to also use the -f argument to remove existing destination files. Here, we assume our virtual environment was created using venv. However, if you come across a virtual environment, it is more likely to have been created using virtualenv, which is more popular, faster, and has more features than venv. This workaroun works for all environments, including virtualenv, pyenv, and conda, but the site-apckages directory might be in a slightly different location depending on the specifics of the environment. We also pull in GNU Radio’s polymorphic types module (pmt), which is required to carry data from one block/thread to another. Any other Python packages, including other GNU Radio subpackages can also be pulled in using this same workaround. ",
+  "wordCount" : "1507",
+  "inLanguage": "en",
+  "datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://qoherent.net/blog/gnu_radio_python_virtual_environment_venv/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Qoherent Technical Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://qoherent.net/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://qoherent.net/" accesskey="h" title="Qoherent Technical Blog (Alt + H)">Qoherent Technical Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://qoherent.net/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://qoherent.net/categories/" title="Topics">
+                    <span>Topics</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://qoherent.net/">Home</a>&nbsp;»&nbsp;<a href="http://qoherent.net/blog/">Blogs</a></div>
+    <h1 class="post-title">
+      How to Run GNU Radio in a Python Virtual Environment.
+    </h1>
+    <div class="post-meta">8 min
+
+</div>
+  </header> 
+  <div class="post-content"><h2 id="pull-an-external-gnu-radio-installation-into-your-python-virtual-environment">Pull an External GNU Radio Installation into your Python Virtual Environment<a hidden class="anchor" aria-hidden="true" href="#pull-an-external-gnu-radio-installation-into-your-python-virtual-environment">#</a></h2>
+<p>This article explains how to access your system-level GNU Radio installation from within a pre-existing Python virtual environment. After completing these steps, you&rsquo;ll be able to import GNU Radio or any of its subpackages into your Python modules using simple import statements, such as: <code>from gnuradio import gr</code>.</p>
+<p>We provide an explanation and a recommendation before the solution, but to <a href="#h-example-solution">jump straight to the solution, click here.</a></p>
+<h2 id="motivation">Motivation<a hidden class="anchor" aria-hidden="true" href="#motivation">#</a></h2>
+<p><a href="https://wiki.gnuradio.org/index.php?title=Main_Page">GNU Radio</a> is a free and open-source software development toolkit for software-defined radios. The easiest way to get started with GNU Radio is thought the GNU Radio Companion graphical user interface. The GNU Radio Companion allows you to create and execute signal processing applications by simply dragging, dropping, and connecting together predefined radio blocks.</p>
+<p>One of the key strengths of GNU Radio is its Python API, which allows users to control and interact with GNU Radio functions programmatically. Instead of designing signal processing flowgraphs graphically, you can use the power and flexibility of Python to manage GNU Radio flowgraphs. The benefits of using gnu radio in python are <a href="https://github.com/TheWylieStCoyote/writing_GNURadio_blocks_python">outlined in this presentation from GR Con 2023.</a></p>
+<p>For more information on getting started with Python, please refer to W3Schools&rsquo; online <a href="https://www.w3schools.com/python/default.asp">Python Tutorial</a> or Replit’s <a href="https://replit.com/learn/100-days-of-python">100 days of python course</a>.</p>
+<h2 id="virtual-environments">Virtual Environments<a hidden class="anchor" aria-hidden="true" href="#virtual-environments">#</a></h2>
+<p>Python dependencies are external libraries on which your project depends. There are typically many, each with their own respective dependencies. In Python, we use virtual environments to facilitate project-specific dependency management. Virtual environments helps us avoid inter-project dependency conflicts by providing isolated, sandboxed environments, each with their own, project-specific set of dependencies. This means we can use one version of a Python package for one project and a different version for another.</p>
+<p>However, for virtual environments to be effective, you need to be able to install all project dependencies into the project&rsquo;s virtual environment. For this, we use <a href="https://pypi.org/project/pip/">Pip</a>. Pip is the standard package manager for Python, and allows users to easily install libraries and utilities from the Python Package Index (<a href="https://pypi.org/">PyPI</a>) and other indexes. For instance, to install NumPy into our virtual environment, we would execute <code>pip install numpy</code> from the command line. Then, we would be able to import and use NumPy and its dependencies in our project.</p>
+<p>In general, it&rsquo;s advisable to conduct all Python development within isolated virtual environments.</p>
+<p>For as accessible introduction to creating, using, and managing Python virtual environments, check out this Medium article by Jake Manger: <a href="https://towardsdatascience.com/getting-started-with-python-virtual-environments-252a6bd2240">Getting Started with Python Virtual Environments</a>.</p>
+<h2 id="the-problem">The Problem<a hidden class="anchor" aria-hidden="true" href="#the-problem">#</a></h2>
+<p>Because it has many non-Python dependencies, GNU Radio is not part of the Python ecosystem. This means GNU Radio is not listed on the PyPI, and is not installable with pip. This can make it challenging to install GNU Radio into an isolated environment. But it is a very common use case to want to run GNU Radio code within a larger python project. The deviation from conventional Python package installations poses a challenge for users accustomed to this approach.</p>
+<h2 id="the-recommended-solution">The Recommended Solution<a hidden class="anchor" aria-hidden="true" href="#the-recommended-solution">#</a></h2>
+<p>For most use cases, the recommend solution is to install GNU Radio into a Conda environment. <a href="https://conda.io/projects/conda/en/latest/user-guide/getting-started.html#managing-python">Conda</a> is a system package manager specifically designed for installing complex software stacks, such as GNU Radio, into sandboxed Python environments, called Conda environment. Conda environments are very similar to traditional virtual environments, except Conda environments support both Python and non-Python packages, while virtual environments are specifically tailored for managing Python packages.</p>
+<p><a href="https://conda-forge.org/">Conda-forge</a>, a community effort to provide conda packages for a wide range of software, makes it easy to install GNU Radio, its dependencies, and out-of-tree modules in a self-contained environment. Please refer to <a href="https://wiki.gnuradio.org/index.php/CondaInstall">CondaInstall</a> for more information on installing GNU Radio with Conda.</p>
+<p>If you&rsquo;re new to Conda and Python package management, it is recommended to start with <a href="https://github.com/ryanvolz/radioconda">radioconda</a>, a complete Conda distribution that comes pre-installed with GNU Radio.</p>
+<h2 id="our-workaround">Our Workaround<a hidden class="anchor" aria-hidden="true" href="#our-workaround">#</a></h2>
+<p>Should your use case require a virtual environment or you encounter difficulties with radioconda, we present a workaround to link an external GNU Radio installation into an already existing virtual environment.</p>
+<p>This workaround, involving <a href="https://en.wikipedia.org/wiki/Symbolic_link">symbolic links</a>, can be used to pull your system-level GNU Radio installation into a standard Python virtual environment.</p>
+<blockquote>
+<p><strong>Caveat:</strong> This is not the recommended way to use GNU Radio. GNU Radio is built against a specific Python installation, and using it with a different Python installation—such as the one in your virtual environment—may result in unexpected behavior.</p>
+</blockquote>
+<p>In a Python virtual environment, user-installed packages are typically installed in the <code>site-packages</code> directory within the module directory of the Python installation. For example, if I created a virtual environment for Python 3.10 using <code>venv</code>, user-installed packages would be installed to <code>venv/lib/python3.10/site-packages</code>.</p>
+<p>When you try to import a GNU Radio module, Python searches for it in all locations listed on <code>PYTHONPATH</code>, which includes the virtual environment&rsquo;s <code>site-packages</code> directory. However, if GNU Radio is not installed within this environment, this will result in the following error: <code>ModuleNotFoundError: No module named 'gnuradio'</code></p>
+<p>You could update <code>PYTHONPATH</code> to include the directory where GNU Radio is installed, but this is not a good idea, as doing so may introduce dependencies that conflict with those already installed in your virtual environment.</p>
+<p>A better solution is to create a link in your project&rsquo;s <code>site-packages</code> directory to the location where the <code>gnuradio</code> module is installed. Then, when Python searches for <code>gnuradio</code> in <code>site-packages</code>, it will find a link to a functional GNU Radio installation.</p>
+<h3 id="symbolic-links">Symbolic Links<a hidden class="anchor" aria-hidden="true" href="#symbolic-links">#</a></h3>
+<p>Symbolic links, also known as symlinks or soft links, are a type of file that serves as a reference to another file or directory in the file system. Symbolic links contain the path of the target file or directory, unlike hard links, which directly point to the index node of the target file or directory.</p>
+<p>They are essentially shortcuts or pointers to other files or directories. They allow you to create a reference to a file or directory in a different location without duplicating the content.</p>
+<p>Symbolic links can enable the integration of GNU Radio&rsquo;s functionality into Python virtual environments. By creating symbolic links, developers can interact with GNU Radio seamlessly within their Python projects.</p>
+<h3 id="creating-a-symbolic-link">Creating a Symbolic Link<a hidden class="anchor" aria-hidden="true" href="#creating-a-symbolic-link">#</a></h3>
+<p>On Debian based distributions such as Ubuntu, we can install a system-level GNU Radio installation with:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install gnuradio
+</span></span></code></pre></div><p>System level packages are installed in <code>dist-packages</code>, which we can verify with:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python3 -c <span style="color:#e6db74">&#34;import gnuradio; print(gnuradio.__path__[0])&#34;</span>
+</span></span></code></pre></div><p>This should return <code>/usr/lib/python3/dist-packages/gnuradio</code>, or similar.</p>
+<p>We can create a link from our virtual environment&rsquo;s <code>site-package</code> directory to the <code>dist-packages</code> directory where GNU Radio is installed using <code>ln</code>, the standard Unix command utility used to create links to existing files or directories.</p>
+<p>The <code>ln</code> command can be used to create both hard links and symbolic links (symlinks). Here, we use the <code>-s</code> option to create symlinks, which point to the path of the target file or directory rather than its inode. You can think of symlinks as shortcuts.</p>
+<h2 id="example-solution">Example solution:<a hidden class="anchor" aria-hidden="true" href="#example-solution">#</a></h2>
+<p>Assuming GNU Radio is installed, here is the complete bash script we use to generate the symlinks, intended to be executed within the Python virtual environment:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Find the system-level GNU Radio installation</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>GNURADIO_PATH<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>python3 -c <span style="color:#e6db74">&#34;import gnuradio; print(gnuradio.__path__[0])&#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>PMT_PATH<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>python3 -c <span style="color:#e6db74">&#34;import pmt; print(pmt.__path__[0])&#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Identify the Python version used within the virtual environment</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>PYTHON_VERSION<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>python3 -c <span style="color:#e6db74">&#34;import sys; print(&#39;.&#39;.join(map(str, sys.version_info[:2])))&#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create a symbolic link to system-level GNU Radio installation</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ln -s $GNURADIO_PATH venv/lib/python<span style="color:#e6db74">${</span>PYTHON_VERSION<span style="color:#e6db74">}</span>/site-packages/
+</span></span><span style="display:flex;"><span>ln -s $PMT_PATH venv/lib/python<span style="color:#e6db74">${</span>PYTHON_VERSION<span style="color:#e6db74">}</span>/site-packages/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Print a success message</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Successfully created symbolic link for gnuradio in venv.&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>deactivate
+</span></span></code></pre></div><p>The specific process we use to  deploy it (called <code>gr_setup.sh</code> below) from a project’s root folder to a new virtual environent includes:</p>
+<ol>
+<li>Create the venv then run the bash script</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python3 -m venv venv
+</span></span><span style="display:flex;"><span>./gr_setup.sh
+</span></span></code></pre></div><ol start="2">
+<li>Activate the virtual environment then test in the python console</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>source venv/bin/activate
+</span></span><span style="display:flex;"><span>python3
+</span></span><span style="display:flex;"><span>import gnuradio
+</span></span></code></pre></div><p>If there is no error, you are successful! Exit the python window.</p>
+<p>You are now ready to install the rest of your dependencies to the virtual environment- e.g.:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">pip</span> <span style="color:#a6e22e">install</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">r</span> <span style="color:#a6e22e">requirements</span>.<span style="color:#a6e22e">txt</span>
+</span></span></code></pre></div><p><strong>A Few Things to Note:</strong></p>
+<ul>
+<li>This does not only need to occur from the system-level, it can be used to link a conda-installed version of GNU Radio to a python virtual environment.</li>
+<li>Since we&rsquo;re using symlinks, if the system-level GNU Radio installation is moved or removed, these links will break, resulting in a <code>ModuleNotFoundError</code>.</li>
+<li>If we were to modify or recreate this link, we would need to also use the <code>-f</code> argument to remove existing destination files.</li>
+<li>Here, we assume our virtual environment was created using <code>venv</code>. However, if you come across a virtual environment, it is more likely to have been created using <code>virtualenv</code>, which is more popular, faster, and has more features than <code>venv</code>. This workaroun works for all environments, including <code>virtualenv</code>, <code>pyenv</code>, and <code>conda</code>, but the <code>site-apckages</code> directory might be in a slightly different location depending on the specifics of the environment.</li>
+<li>We also pull in GNU Radio&rsquo;s <a href="https://wiki.gnuradio.org/index.php/Polymorphic_Types_(PMTs)">polymorphic types</a> module (pmt), which is required to carry data from one block/thread to another.</li>
+<li>Any other Python packages, including other GNU Radio subpackages can also be pulled in using this same workaround.</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://qoherent.net/tags/gnu-radio/">GNU Radio</a></li>
+      <li><a href="http://qoherent.net/tags/python/">python</a></li>
+      <li><a href="http://qoherent.net/tags/ubuntu/">ubuntu</a></li>
+      <li><a href="http://qoherent.net/tags/venv/">venv</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="http://qoherent.net/">Qoherent Technical Blog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

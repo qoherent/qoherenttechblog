@@ -58,5 +58,13 @@
   </url><url>
     <loc>http://qoherent.net/docs/test/</loc>
     <lastmod>2023-08-11T00:05:00-04:00</lastmod>
+  </url><url>
+    <loc>http://qoherent.net/tags/gnu-radio/</loc>
+  </url><url>
+    <loc>http://qoherent.net/blog/gnu_radio_python_virtual_environment_venv/</loc>
+  </url><url>
+    <loc>http://qoherent.net/tags/python/</loc>
+  </url><url>
+    <loc>http://qoherent.net/tags/venv/</loc>
   </url>
 </urlset>
